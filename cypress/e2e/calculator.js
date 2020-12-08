@@ -1,6 +1,9 @@
+// Kent likes RTL and jest for integration tests
+// Cypress strictly for e2e!  yay! I didn't learn RTL for no reason!
+
 describe('anonymous calculator', () => {
   it('can make calculations', () => {
-    cy.visit('/')
+    cy.visit('/') // baseUrl set in cypress.json
       .get('._2S_Gj6clvtEi-dZqCLelKb > :nth-child(3)')
       .click()
       .get('._1yUJ9HTWYf2v-MMhAEVCAn > :nth-child(4)')
