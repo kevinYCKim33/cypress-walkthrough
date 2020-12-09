@@ -26,7 +26,7 @@ function AutoScalingText({children}) {
       className={styles.autoScalingText}
       style={{transform: `scale(${scale},${scale})`}}
       ref={nodeRef}
-      data-testid="total"
+      data-testid="total" // just for cypress
     >
       {children}
     </div>
