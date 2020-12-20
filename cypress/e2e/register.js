@@ -17,7 +17,9 @@ describe('registration', () => {
       .window()
       .its('localStorage.token')
       .should('be.a', 'string')
-      .findByTestId('username-display')
-      .should('have.text', user.username)
+      // TDD starts here
+      // this would have been amazing for Beat45 Registration page
+      .findByTestId('username-display') // new section
+      .should('have.text', user.username) // new section
   })
 })
