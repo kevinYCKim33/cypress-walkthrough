@@ -1,3 +1,5 @@
+TLDR: the docs here are great: https://example.cypress.io/commands/actions
+
 While the course is still fresh in my mind
 
 `yarn add cypress --dev-dependency`
