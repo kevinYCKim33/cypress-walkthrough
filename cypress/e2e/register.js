@@ -13,7 +13,15 @@ describe('registration', () => {
       .findByText(/submit/i)
       .click()
       .assertHome()
+      // ^^^
+      // cy.url().should('eq', `${Cypress.config().baseUrl}/`)
       .assertLoggedInAs(user)
+    // ^^^
+    //   cy.window()
+    // .its('localStorage.token')
+    // .should('be.a', 'string')
+    // .findByTestId('username-display')
+    // .should('have.text', user.username)
   })
 
   it(`should show an error message if there's an error registering`, () => {

@@ -9,10 +9,12 @@ Cypress.Commands.add('createUser', overrides => {
   }).then(response => ({...response.body.user, ...user}))
 })
 
+// takes care of duplications in register.js and login.js
 Cypress.Commands.add('assertHome', () => {
   cy.url().should('eq', `${Cypress.config().baseUrl}/`)
 })
 
+// takes care of duplications in register.js and login.js
 Cypress.Commands.add('assertLoggedInAs', user => {
   cy.window()
     .its('localStorage.token')

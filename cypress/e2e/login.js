@@ -11,7 +11,17 @@ describe('login', () => {
         .findByText(/submit/i)
         .click()
         .assertHome()
+        // ^^^
+        // cy.url().should('eq', `${Cypress.config().baseUrl}/`)
         .assertLoggedInAs(user)
+      // ^^^
+      //   cy.window()
+      // .its('localStorage.token')
+      // .should('be.a', 'string')
+      // .findByTestId('username-display')
+      // .should('have.text', user.username)
     })
   })
 })
+
+// tests now leaner and more descriptive
