@@ -4,6 +4,8 @@ describe('login', () => {
   it('should login an existing user', () => {
     // create user
     const user = buildUser()
+    // very clean
+    // magic flute in Super Mario Bros 3
     cy.request({
       url: 'http://localhost:3000/register',
       method: 'POST',
@@ -11,6 +13,20 @@ describe('login', () => {
     })
 
     cy.visit('/')
+      // all of the following is now pointless as this all got proven to work in register.js
+      // you're overtesting by adding below
+      // the test takes longer
+      // one failure two failed tests, needless confusion
+      // .findByText(/register/i)
+      // .click()
+      // .findByLabelText(/username/i)
+      // .type(user.username)
+      // .findByLabelText(/password/i)
+      // .type(user.password)
+      // .findByText(/submit/i)
+      // .click()
+      // .findByText(/logout/i)
+      // .click()
       .findByText(/login/i)
       .click()
       .findByLabelText(/username/i)
