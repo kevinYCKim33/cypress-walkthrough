@@ -15,6 +15,7 @@ describe('login', () => {
       .findByText(/logout/i)
       .click()
       // now our test can start...
+      // since user is now created...
       .findByText(/login/i)
       .click()
       .findByLabelText(/username/i)
