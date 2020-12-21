@@ -14,6 +14,9 @@ describe('anonymous calculator', () => {
   })
 })
 
+// only new part
+// just more drilling...
+// nothing too terribly new
 describe('authenticated calculator', () => {
   it('displays the username', () => {
     cy.createUser().then(user => {
