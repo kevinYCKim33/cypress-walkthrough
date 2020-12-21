@@ -20,20 +20,24 @@ Cypress.Commands.add('login', user => {
     })
     .then(({body}) => {
       window.localStorage.setItem('token', body.user.token)
+      // so that the user is chainable through the test
       return body.user
     })
 })
 
+// joining two custom cypress methods
 Cypress.Commands.add('loginAsNewUser', () => {
   cy.createUser().then(user => {
     cy.login(user)
   })
 })
 
+// used in both login.js and register.js
 Cypress.Commands.add('assertHome', () => {
   cy.url().should('eq', `${Cypress.config().baseUrl}/`)
 })
 
+// used in both login.js and register.js
 Cypress.Commands.add('assertLoggedInAs', user => {
   cy.window()
     .its('localStorage.token')

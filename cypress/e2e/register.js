@@ -11,6 +11,10 @@ describe('registration', () => {
     cy.assertHome().assertLoggedInAs(user)
   })
 
+  // cy.route is now cy.intercept
+  // anyways, a way to fake a 500 error or even mock BE response
+  // cy.request() is the one actually make a call to BE as a way to start a test from the middle and not the start
+  // for DRYness
   it(`should show an error message if there's an error registering`, () => {
     cy.server()
     cy.route({
