@@ -10,6 +10,14 @@
     <meta name="viewport" content="width=device-width" />
     <script>
       if (window.Cypress) {
+        // cypress is already in a react app
+        // register our app with the dev tools
+        // this needs to happen before react mounts onto the app
+
+        // "Hey, this variable, I want to assign it to the window.parent
+        // version of that variable so that when React loads up,
+        // it sees this variable and starts registering things with the
+        // parents version of this variable."
         window.__REACT_DEVTOOLS_GLOBAL_HOOK__ =
           window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__
       }
